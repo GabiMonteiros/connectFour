@@ -5,6 +5,9 @@
   margin: 8px;
 }
 
+header{
+  font-family: DotGothic16;
+}
 
 .slot{
   width: 100px;
