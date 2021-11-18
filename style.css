@@ -7,12 +7,18 @@
 
 header{
   font-family: DotGothic16;
+  text-align: center;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
 }
 
 .slot{
   width: 100px;
   height: 100px;
-  background-color: rgb(38, 51, 230);
+  /* background-color: rgb(38, 51, 230); */
   overflow: hidden;
 }
 
@@ -37,4 +43,12 @@ header{
 
 #board{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 925px;
+  height: 680px;
+  background-color: rgb(38, 51, 230);
+  border-radius: 0.5rem;
+  box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
+  
 }

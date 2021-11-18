@@ -1,6 +1,6 @@
 //console.log("halooo script, halloo Jq:", $)
 
-(function () {
+(function game() {
     var currentPlayer = "playerMoon";
 
     //listening to the click in the column
@@ -16,10 +16,40 @@
                 //break to stop the loop after find it
             }
         }
+
+        //checking empty slot
+        if (!foundEmpty) {
+            console.log("no empty slot, try again!");
+            return;
+        }
+        //so it ignores an element  if the hole is already filled
+        if (i < 0) {
+            return;
+        }
+
+        //checking for victory
+        function checkForVictory(slots) {
+            var count = 0;
+            for (var i = 0; i < slots.lenght; i++){
+                if (slots.eq(i).hasClass(currentPlayer)) {
+                    count++;
+                    if (count == 4) {
+                        //victory
+                        return true;
+                    }
+
+                } else {
+                    count = 0;
+                }
+            }
+        }
+
+        //the game continues
+        switchPlayers();
     });
 
     //track the current player
-    function switchPlayer() {
+    function switchPlayers() {
         if (currentPlayer == "playerMoon") {
             currentPlayer = "playerSun";
         } else {
