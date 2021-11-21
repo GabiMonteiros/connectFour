@@ -5,7 +5,8 @@
   margin: 8px;
 }
 
-header{
+header, 
+.reset{
   font-family: DotGothic16;
   text-align: center;
   display: flex;
@@ -51,4 +52,8 @@ header{
   border-radius: 0.5rem;
   box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
   
+}
+
+.reset{
+  padding: 1rem;
 }
