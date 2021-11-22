@@ -2,6 +2,18 @@
 
 (function game() {
     var currentPlayer = "playerMoon";
+    var board = $("#board")
+    var allslots = board.find(".slot");
+    var column =$(".column")
+    var winner = false;
+    var round = 0;
+    var playerMoon = 0;
+    var playerSun = 0;
+    var currentPlayerField = $(".field-player");
+    var btnReload = $(".reset");
+    var roundFiled = $(".field-counter");
+    var playerMoonField = $(".field-playerMoon");
+    var playerSunField = $(".field-playerSun");
 
     //listening to the click in the column
     $(".column").on("click", function (e) {
@@ -10,7 +22,9 @@
 
         //loop to find empty slot from the bottom // i= slotsInColumn.length - 1 = 5
         for (var i = 5; i >= 0; i--) {
-            if (!slot.hasClass("playerMoon") && !slot.hasClass("playerSun")) {
+            if (!slot.hasClass("playerMoon") &&
+                !slot.hasClass("playerSun")
+            ) {
                 slot.addClass(currentPlayer);
                 break;
                 //break to stop the loop after find it
