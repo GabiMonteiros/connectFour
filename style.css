@@ -2,11 +2,14 @@
 
 *{
   box-sizing: border-box;
-  margin: 8px;
+margin: 0;
 }
 
 body{
   
+  background-image: url("cloud.gif"); 
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 main{
@@ -37,6 +40,7 @@ header{
   height: 100px;
   /* background-color: rgb(38, 51, 230); */
   overflow: hidden;
+  margin: 0.5rem;
 }
 
 .hole{
@@ -45,8 +49,9 @@ header{
   height: 80px;
   border: 50px rgba(203, 223, 241, 0.637) solid;
   position: relative;
-  left: -8px;
-  top: -8px;
+  /* left: -8px;
+  top: -8px; */
+  
   
 }
 
@@ -72,11 +77,12 @@ header{
 }
 
 .reset{
-  padding: 1rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
   color: rgb(38, 51, 230);
   border: 1.5px solid rgb(38, 51, 230);
-  width: 5rem;
-  transform: translate(800%);
+  width: 8rem;
+  transform: translate(500%);
   border-radius: 0.5rem;
   cursor: pointer;
 
