@@ -26,14 +26,15 @@ main{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: rgb(219, 201, 201);
 
 
 }
 
 header{
-  border: 1.5px solid rgb(38, 51, 230);
+  /* border: 5px solid rgb(38, 51, 230); */
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  margin: 0.6rem;
 }
 .slot{
   width: 100px;
@@ -48,20 +49,37 @@ header{
   width: 80px;
   height: 80px;
   border: 50px rgba(203, 223, 241, 0.637) solid;
-  position: relative;
-  /* left: -8px;
-  top: -8px; */
-  
-  
+ /*um jeito de deixar transparente*/
+  position: relative; 
+}
+
+.hole:hover{
+  background-color: rgb(94, 238, 171);
 }
 
 .field-playerMoon{
   background-color: rgb(123, 197, 240);
+  color: black;
+  padding: 0.2rem;
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 2.5rem;
+}
+ 
+/*select the p only in field-playerMoon class*/
+.field-playerMoon > p{
+  font-weight: 590;
 }
 
 .field-playerSun{
   background-color: rgb(224, 194, 21);
+  color: black;
+  padding: 0.2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 2.5rem;
 }
+
 
 
 #board{
@@ -81,6 +99,7 @@ header{
   padding: 0.2rem;
   color: rgb(38, 51, 230);
   border: 1.5px solid rgb(38, 51, 230);
+  
   width: 8rem;
   transform: translate(500%);
   border-radius: 0.5rem;
