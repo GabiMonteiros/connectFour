@@ -15,16 +15,21 @@
     var playerMoonField = $(".field-playerMoon");
     var playerSunField = $(".field-playerSun");
 
-    //listening to the click in the column
-    //<!-- board = game , column = tr , slot = td  , hole = slot /// cell = hole
-    $(".column").on("click", function (e) {
-        var columnElement = $(e.currentTarget);
-        var slotsInColumn = columnElement.children();
+    //listening to the click in the column to run the function
+    column.on("click", function (e) {
+        /*currentTarget sempre se refere ao elemento associado ao event handler, q nesse caso è o click na coluna. slot */
+        var slotsInColumn = $(e.currentTarget).children();
+        //console.log('slotsInColumn: ', 'slotsInColumn');
 
         //loop to find empty slot from the bottom // i= slotsInColumn.length - 1 = 5
         for (var i = 5; i >= 0; i--) {
-            if (!slot.hasClass("playerMoon") && !slot.hasClass("playerSun")) {
-                slot.addClass(currentPlayer);
+            //eq(i) == equals  ao i 
+            //PAREI AQUI O QUE É HASCLASS
+              if (
+                !slotsInColumn.eq(i).hasClass("playerMoon") &&
+                !slotsInColumn.eq(i).hasClass("playerSun")
+            ) {
+                slotsInColumn.eq(i).addClass(currentPlayer);
                 break;
                 //break to stop the loop after find it
             }
