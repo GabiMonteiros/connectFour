@@ -56,7 +56,7 @@ header{
   position: relative; 
 }
 
-/* important to leave only playMoon to tag the player in the hole*/
+/* important to leave only .playMoon(not field-playerSun) to tag the player in the hole*/
 .playerMoon .hole{
   background-color: rgb(115, 192, 228);
   

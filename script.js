@@ -10,7 +10,7 @@
     var playerMoon = 0;
     var playerSun = 0;
     var currentPlayerField = $(".field-player");
-    var btnReload = $(".reset");
+    var reload = $(".reset");
     var roundFiled = $(".field-counter");
     var playerMoonField = $(".field-playerMoon");
     var playerSunField = $(".field-playerSun");
@@ -47,7 +47,7 @@
         if (checkVictory(slotsInColumn)) {
             //some player won in column
             winner = true;
-            VictoryAnimation();
+            victoryAnimation();
             return;
         } else {
             var slotsInRow = $(".row" + i);
@@ -55,7 +55,7 @@
             if (checkVictory(slotsInRow)) {
                 //player won in column
                 winner = true;
-                VictoryAnimation();
+                victoryAnimation();
                 return;
             } //else {
             //     checkDiagonalVictory();
@@ -129,7 +129,7 @@
                 allSlots.eq(arrayDiagonal[i][3]).hasClass(currentPlayer)
             ) {
                 winner = true;
-                victoryMessage();
+                victoryAnimation();
                 return true;
             }
         }
@@ -144,11 +144,12 @@
         }
     }
 
-    //Set the score
-    if (currentPlayer == "playerMoon") {
-        playerMoon++;
-    } else {
-        playerSun++;
-    }
+    
+
+    //reset the game
+    reload.on("click", function () {
+        location.reload();
+    });
+    
     
 })();
