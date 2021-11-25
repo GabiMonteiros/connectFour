@@ -10,10 +10,14 @@
     var playerMoon = 0;
     var playerSun = 0;
     var currentPlayerField = $(".field-player");
-    var reload = $(".reset");
-    var roundFiled = $(".field-counter");
     var playerMoonField = $(".field-playerMoon");
     var playerSunField = $(".field-playerSun");
+    var reload = $(".reset");
+    var btnNewGame = $(".btn-newGame");
+    var roundFiled = $(".field-counter");
+    var winnerMsg = $(".winner-field");
+    var animationBox = $(".animation");
+    var overlapping = $(".overlapping");
 
     //listening to the click in the column to run the function
     column.on("click", function (e) {
@@ -144,12 +148,29 @@
         }
     }
 
-    
+    function victoryAnimation() {
+        var message = "<p>" + currentPlayer.toLocaleUpperCase() + " won!! </p>";
+        if (winner) {
+            winnerMsg.html(message);
+            animationBox.addClass("on");
+            overlapping.addClass("on");
+        }
+        //the score
+        if (currentPlayer == "playerMoon") {
+            playerMoon++;
+        } else {
+            playerSun++;
+        }
+    }
 
     //reset the game
     reload.on("click", function () {
         location.reload();
     });
-    
-    
+
+    //button new game
+    btnNewGame.on("click", function () {
+        round++;
+    })
+
 })();
