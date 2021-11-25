@@ -96,7 +96,7 @@
             }
         }
     }
-
+ //fazer funcionar DIAGONAL 
     function checkDiagonalVictory() {
         var arrayDiagonal = [
             //24
