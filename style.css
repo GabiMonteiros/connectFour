@@ -10,36 +10,38 @@ body{
   background-image: url("cloud.gif"); 
   background-repeat: repeat-y;
   background-size: cover;
+  min-height: 100vh;
+  font-family: DotGothic16;
+  text-align: center;
+  font-size: 1.1rem;
+  
 }
 
 main{
   display: flex;
   justify-content: center;
-  
 
 }
 
+header{
+  border-radius: 0.5rem;
+  margin: 0.6rem;
+} 
+
 .field,
 .reset{
-  font-family: DotGothic16;
-  text-align: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   color: rgb(219, 201, 201);
 
-
 }
 
-header{
-  /* border: 5px solid rgb(38, 51, 230); */
-  border-radius: 0.5rem;
-  margin: 0.6rem;
-}
+
+
 .slot{
   width: 100px;
   height: 100px;
-  /* background-color: rgb(38, 51, 230); */
   overflow: hidden;
   margin: 0.5rem;
 }
@@ -48,39 +50,73 @@ header{
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  border: 50px rgba(203, 223, 241, 0.637) solid;
+  border: 1px  rgb(87, 87, 214) solid;
+  background: transparent;
  /*um jeito de deixar transparente*/
   position: relative; 
 }
 
-.hole:hover{
-  background-color: rgb(94, 238, 171);
+/* important to leave only playMoon to tag the player in the hole*/
+.playerMoon .hole{
+  background-color: rgb(115, 192, 228);
+  
 }
 
-.field-playerMoon{
-  background-color: rgb(123, 197, 240);
-  color: black;
+
+.playerSun .hole{
+  background-color: orange;
+  
+  
+}
+
+.hole:hover{
+  background-color: rgb(87, 87, 214) ;
+}
+
+.field-playerMoon,
+.field-playerSun,
+.field-counter,
+.field-player{
   padding: 0.2rem;
   height: 4.2rem;
   width: 4.2rem;
   border-radius: 2.5rem;
+  border: 2px solid rgb(87, 87, 214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8em;
+ 
 }
+
+
+
+.field-playerMoon{
+  background-color: lightblue;
+  color: black;
+  
+}
+
+.field-playerSun{
+  background-color:orange;
+  color: black;
+  
+}
+
+
  
 /*select the p only in field-playerMoon class*/
 .field-playerMoon > p{
   font-weight: 590;
 }
 
-.field-playerSun{
-  background-color: rgb(224, 194, 21);
-  color: black;
-  padding: 0.2rem;
-  height: 4rem;
-  width: 4rem;
-  border-radius: 2.5rem;
+
+
+.shadow {
+  box-shadow: 
+  2px 4px 3px 2px rgba(0, 0, 0, 0.15)
 }
-
-
 
 #board{
   display: flex;
@@ -88,18 +124,18 @@ header{
   justify-content: center;
   width: 925px;
   height: 680px;
-  background-color: rgb(38, 51, 230);
+  border: 3px rgb(87, 87, 214) solid;
   border-radius: 0.5rem;
-  box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
+  box-shadow: -7px 1px 16px 1px rgba(56, 86, 122, 0.6);
   
 }
 
 .reset{
   margin: 0.5rem;
   padding: 0.2rem;
-  color: rgb(38, 51, 230);
-  border: 1.5px solid rgb(38, 51, 230);
-  
+  color: rgb(75, 75, 224);
+  border: 2px solid rgb(87, 87, 214);
+  font-weight: 1000;
   width: 8rem;
   transform: translate(500%);
   border-radius: 0.5rem;

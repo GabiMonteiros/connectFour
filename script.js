@@ -72,7 +72,7 @@
                 backgroundcolor: "orange;",
             });
         }
-        // //the game continues
+        //the game continues
         switchPlayers();
     });
 
@@ -80,6 +80,8 @@
         var count = 0;
         for (var i = 0; i < slots.length; i++) {
             if (slots.eq(i).hasClass(currentPlayer)) {
+                //hasClass atribui a class currentplayer ao elemento
+                //count mais 1
                 count++;
                 if (count == 4) {
                     // winner!!!
@@ -91,7 +93,49 @@
         }
     }
 
-    // tracking urrent player
+    function checkDiagonalVictory() {
+        var arrayDiagonal = [
+            //24
+            [2, 9, 16, 23],
+            [1, 8, 15, 22],
+            [8, 15, 22, 29],
+            [0, 7, 14, 21],
+            [7, 14, 21, 28],
+            [14, 21, 28, 35],
+            [6, 13, 20, 27],
+            [13, 20, 27, 34],
+            [20, 27, 34, 41],
+            [12, 19, 26, 33],
+            [19, 26, 33, 40],
+            [18, 25, 32, 39],
+            [38, 33, 28, 23],
+            [37, 32, 27, 22],
+            [32, 27, 22, 17],
+            [36, 31, 26, 21],
+            [31, 26, 21, 16],
+            [26, 21, 16, 11],
+            [30, 25, 20, 15],
+            [25, 20, 15, 10],
+            [20, 15, 10, 5],
+            [24, 19, 14, 9],
+            [19, 14, 9, 4],
+            [18, 13, 8, 3],
+        ];
+        for (var i = 0; i < arrayDiagonal.length; i++) {
+            if (
+                allSlots.eq(arrayDiagonal[i][0]).hasClass(currentPlayer) &&
+                allSlots.eq(arrayDiagonal[i][1]).hasClass(currentPlayer) &&
+                allSlots.eq(arrayDiagonal[i][2]).hasClass(currentPlayer) &&
+                allSlots.eq(arrayDiagonal[i][3]).hasClass(currentPlayer)
+            ) {
+                winner = true;
+                victoryMessage();
+                return true;
+            }
+        }
+    }
+
+    // tracking current player
     function switchPlayers() {
         if (currentPlayer == "playerMoon") {
             currentPlayer = "playerSun";
@@ -99,4 +143,12 @@
             currentPlayer = "playerMoon";
         }
     }
+
+    //Set the score
+    if (currentPlayer == "playerMoon") {
+        playerMoon++;
+    } else {
+        playerSun++;
+    }
+    
 })();
