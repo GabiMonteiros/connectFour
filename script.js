@@ -149,7 +149,7 @@
     }
 
     function victoryAnimation() {
-        var message = "<p>" + currentPlayer.toLocaleUpperCase() + " won!! </p>";
+        var message = "<p>" + currentPlayer.toLocaleUpperCase() + " WON!! </p>";
         if (winner) {
             winnerMsg.html(message);
             animationBox.addClass("on");
