@@ -68,9 +68,7 @@
 
         //color for the currentPlayer
         if (currentPlayer == "playerMoon") {
-            currentPlayerField.css({
-                backgroundcolor: "lightblue;",
-            });
+            currentPlayerField.css("background-image", 'url("moon.png")');
         } else {
             currentPlayerField.css({
                 backgroundcolor: "orange;",

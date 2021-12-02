@@ -50,7 +50,7 @@ header{
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  border: 1px  rgb(87, 87, 214) solid;
+  border: 1px  rgba(87, 87, 214, 0.397) solid;
   background: transparent;
  /*um jeito de deixar transparente*/
   position: relative; 
@@ -58,13 +58,17 @@ header{
 
 /* important to leave only .playMoon(not field-playerSun) to tag the player in the hole*/
 .playerMoon .hole{
-  background-color: rgb(115, 192, 228);
-  
+  background-image: url("moon.png"); 
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: -8px;
 }
 
 
 .playerSun .hole{
-  background-color: orange;
+  background-image: url("sun.png"); 
+  background-repeat: repeat-y;
+  background-size: cover;
   
   
 }
@@ -93,14 +97,22 @@ header{
 
 
 .field-playerMoon{
-  background-color: lightblue;
-  color: black;
+  background-image: url("moon.png"); 
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: rgb(105, 186, 190);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
   
 }
 
 .field-playerSun{
-  background-color:orange;
-  color: black;
+  background-image: url("sun.png"); 
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: rgb(28, 65, 68);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
   
 }
 
@@ -228,6 +240,7 @@ header{
   left: 39%;
   width: 350px;
   height: 250px;
+  border-radius: 0.5rem;
   background-image: url("winner-msgm.gif"); 
   background-repeat: repeat-y;
   background-size: cover;
