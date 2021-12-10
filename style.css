@@ -61,7 +61,7 @@ header{
   background-image: url("moon.png"); 
   background-repeat: repeat-y;
   background-size: cover;
-  padding: -8px;
+  /* padding: -8px; */
 }
 
 

@@ -3,7 +3,7 @@
 (function game() {
     var currentPlayer = "playerMoon";
     var board = $("#board");
-    var allslots = board.find(".slot");
+    var allSlots = board.find(".slot");
     var column = $(".column");
     var winner = false;
     var round = 0;
@@ -30,7 +30,7 @@
             //eq(i) == equals ao index, igual a  i ,  igual a um dos slots na coluna
 
             if (
-                //se o islotsInColumn nao tem igual ao index preenchido pelo Moon e nao é igual ao Sun
+                //se o islotsInColumn nao tem o index igual(equal)preenchido pelo Moon e nao é igual ao Sun
                 !slotsInColumn.eq(i).hasClass("playerMoon") &&
                 !slotsInColumn.eq(i).hasClass("playerSun")
             ) {
@@ -61,18 +61,25 @@
                 winner = true;
                 victoryAnimation();
                 return;
-            } //else {
-            //     checkDiagonalVictory();
-            // }
+            } else { //won in diagonal
+                checkDiagonalVictory();
+            }
         }
 
-        //color for the currentPlayer
+        //img for the currentPlayer ???
         if (currentPlayer == "playerMoon") {
-            currentPlayerField.css("background-image", 'url("moon.png")');
+            currentPlayerField.css(
+                "background",
+                'url("sun.png") no-repeat'
+            );
         } else {
-            currentPlayerField.css({
-                backgroundcolor: "orange;",
-            });
+            currentPlayerField.css(
+                "background",
+                'url("moon.png")',
+                "repeat-y"
+            );
+
+            //$("myObject").css("background", "transparent url('"+imageURL+"') no-repeat right top");
         }
         //the game continues
         switchPlayers();
@@ -97,7 +104,7 @@
  //fazer funcionar DIAGONAL 
     function checkDiagonalVictory() {
         var arrayDiagonal = [
-            //24
+            //24 combinations
             [2, 9, 16, 23],
             [1, 8, 15, 22],
             [8, 15, 22, 29],
@@ -125,6 +132,7 @@
         ];
         for (var i = 0; i < arrayDiagonal.length; i++) {
             if (
+                //se um dos slots tem o index N igual(equal) a um dos conjutos de numeros da  arrayDiagonal , add a class um deles  como current player
                 allSlots.eq(arrayDiagonal[i][0]).hasClass(currentPlayer) &&
                 allSlots.eq(arrayDiagonal[i][1]).hasClass(currentPlayer) &&
                 allSlots.eq(arrayDiagonal[i][2]).hasClass(currentPlayer) &&
@@ -169,6 +177,13 @@
     //button new game
     btnNewGame.on("click", function () {
         round++;
+        allSlots.removeClass("playerMoon");
+        allSlots.removeClass("playerSun");
+        animationBox.removeClass("on");
+        overlapping.removeClass("on");
+        roundFiled.html("<p> Round " + round + "</p>");
+        playerMoonField.html("<p> Player Moon wins " + playerMoon + "</p>");
+        playerSunField.html("<p> Player Sun wins " + playerSun + "</p>");
     })
 
 })();
