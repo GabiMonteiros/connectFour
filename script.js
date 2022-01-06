@@ -1,17 +1,17 @@
 //console.log("halooo script, halloo Jq:", $)
 
 (function game() {
-    var currentPlayer = "playerMoon";
+    var currentPlayer = "Moon";
     var board = $("#board");
     var allSlots = board.find(".slot");
     var column = $(".column");
     var winner = false;
     var round = 0;
-    var playerMoon = 0;
-    var playerSun = 0;
+    var Moon = 0;
+    var Sun = 0;
     var currentPlayerField = $(".field-player");
-    var playerMoonField = $(".field-playerMoon");
-    var playerSunField = $(".field-playerSun");
+    var playerMoonField = $(".field-Moon");
+    var playerSunField = $(".field-Sun");
     var reload = $(".reset");
     var btnNewGame = $(".btn-newGame");
     var roundFiled = $(".field-counter");
@@ -31,8 +31,8 @@
 
             if (
                 //se o islotsInColumn nao tem o index igual(equal)preenchido pelo Moon e nao é igual ao Sun
-                !slotsInColumn.eq(i).hasClass("playerMoon") &&
-                !slotsInColumn.eq(i).hasClass("playerSun")
+                !slotsInColumn.eq(i).hasClass("Moon") &&
+                !slotsInColumn.eq(i).hasClass("Sun")
             ) {
                 slotsInColumn.eq(i).addClass(currentPlayer);
                 //add a class um deles(moon / sun)  como current player
@@ -67,16 +67,17 @@
         }
 
         //img for the currentPlayer ???
-        if (currentPlayer == "playerMoon") {
+        if (currentPlayer == "Moon") {
             currentPlayerField.css(
                 "background",
                 'url("sun.png") no-repeat'
             );
+            // backgroundImage: 'url(' + imageUrl + ')'
+            //,backgroundRepeat: 'repeat-x'
         } else {
             currentPlayerField.css(
                 "background",
-                'url("moon.png")',
-                "repeat-y"
+                'url("moon.png")repeat-y'
             );
 
             //$("myObject").css("background", "transparent url('"+imageURL+"') no-repeat right top");
@@ -147,10 +148,10 @@
 
     // tracking current player
     function switchPlayers() {
-        if (currentPlayer == "playerMoon") {
-            currentPlayer = "playerSun";
+        if (currentPlayer == "Moon") {
+            currentPlayer = "Sun";
         } else {
-            currentPlayer = "playerMoon";
+            currentPlayer = "Moon";
         }
     }
 
@@ -162,10 +163,10 @@
             overlapping.addClass("on");
         }
         //the score
-        if (currentPlayer == "playerMoon") {
-            playerMoon++;
+        if (currentPlayer == "Moon") {
+            Moon++;
         } else {
-            playerSun++;
+            Sun++;
         }
     }
 
@@ -177,13 +178,13 @@
     //button new game
     btnNewGame.on("click", function () {
         round++;
-        allSlots.removeClass("playerMoon");
-        allSlots.removeClass("playerSun");
+        allSlots.removeClass("Moon");
+        allSlots.removeClass("Sun");
         animationBox.removeClass("on");
         overlapping.removeClass("on");
         roundFiled.html("<p> Round " + round + "</p>");
-        playerMoonField.html("<p> Player Moon wins " + playerMoon + "</p>");
-        playerSunField.html("<p> Player Sun wins " + playerSun + "</p>");
+        playerMoonField.html("<p> " + Moon + "</p>");
+        playerSunField.html("<p> " + Sun + "</p>");
     })
 
 })();
