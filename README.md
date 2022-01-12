@@ -1,3 +1,3 @@
 #README IMAGE
 
-![GIFDEMO!](gameDemo.gif)
+![GIFDEMO!](demoLarge.gif)
